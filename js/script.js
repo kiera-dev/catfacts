@@ -1,19 +1,55 @@
-function getRandom(max){
-    return Math.floor(Math.random() * max);
-}
+//old code using the cat facts API
+//function getRandom(max){
+//    return Math.floor(Math.random() * max);
+//}
+//$(document).ready(function(){
+//  $("#jack").click(function(){
+//    $.get("https://cat-fact.herokuapp.com/facts", function(data, status){
+//        var index = getRandom(data.all.length);
+//        if (index == 19){
+//            index = 20;
+//        }
+//        $("p").html(data.all[index].text);
+//    });
+//  });
+//});
+
 $(document).ready(function(){
+  var catFacts = [
+    "Cats can jump up to six times their length in one leap.",
+    "The world's oldest cat was 38 years old.",
+    "Cats have five toes on their front paws and four toes on their back paws.",
+    "Cats have a unique vocal signature, similar to a human fingerprint.", 
+    'A group of cats is called a "clowder".', 
+    "A cat's whiskers are roughly as wide as its body.",
+    "Cats can rotate their ears 180 degrees.", 
+    "Cats have a strong territorial instinct.", 
+    "A cat spends about 70-80% of its life sleeping.", 
+    "The world record for the longest jump by a cat is over 7 feet.", 
+    "Cats can't taste sweetness.", 
+    "A cat's nose print is unique, much like a human's fingerprint.", 
+    "Domestic cats can run up to 30 miles per hour for short distances.", 
+    "Cats have a specialized collarbone that allows them to always land on their feet when falling.", 
+    'The "M" shape on a cat\'s\ forehead is called the "mark of the tabby."',
+    "A cat's whiskers help them measure openings to determine if they can fit through.",
+    "The world's richest cat inherited over $12 million.", 
+    "The frequency of a domestic cat's purring is the same frequency at which muscles and bones repair themselves.",
+    "Cats have excellent night vision due to a layer of cells in their eyes called the tapetum lucidum.",
+    "The oldest known pet cat was found in a 9,500-year-old grave on the Mediterranean island of Cyprus.",
+    "Cats have a unique grooming pattern that starts with licking their lips and ends with grooming their ears.",
+    "The average cat sleeps for about 12-16 hours a day.", 
+    // Add more cat facts here
+  ];
+
+  function getRandom(max) {
+    return Math.floor(Math.random() * max);
+  }
+
   $("#jack").click(function(){
-    $.get("https://cat-fact.herokuapp.com/facts", function(data, status){
-        var index = getRandom(data.all.length);
-        if (index == 19){
-            index = 20;
-        }
-        $("p").html(data.all[index].text);
-    });
+    var index = getRandom(catFacts.length);
+    $("p").html(catFacts[index]);
   });
 });
-
-
 
 //confetti:
     //https://jsfiddle.net/hcxabsgh/
